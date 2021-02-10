@@ -1,0 +1,26 @@
+<section class="consultar">
+    <h3 class="subheader">Consulta tu disponibilidad...</h3>
+    <form action="" method="POST" class="normalize-text">
+        <div class="border">
+            <div class="form-group">
+                <label for="llegada">Llegada<fa-icon [icon]="faCalendarAlt"></fa-icon></label>
+                <input type="date" id="llegada">
+            </div>
+            <div class="form-group">
+                <label for="salida">Salida<fa-icon [icon]="faCalendarAlt"></fa-icon></label>
+                <input type="date" id="salida">
+            </div>
+            <div class="form-group">
+                <label for="adultos">Adultos<fa-icon [icon]="faSortDown"></fa-icon></label>
+                <input type="number" id="adultos">
+            </div>
+            <div class="form-group">
+                <label for="ninos">Niños<fa-icon [icon]="faSortDown"></fa-icon></label>
+                <input type="number" id="ninos">
+            </div>
+        </div>
+        
+        <button type="submit">Consultar Ahora</button>
+    </form>
+
+</section>

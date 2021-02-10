@@ -1,0 +1,17 @@
+/* Tipologias CSS */
+
+.tipo-cab-img,
+.tipo-casa-text{
+    margin-top: var(--margin-top-components);
+    grid-column: 1 / 7;
+}
+
+.tipo-casa-img,
+.tipo-cab-text{
+    margin-top: var(--margin-top-components);
+    grid-column: 7 / 13;
+}
+
+.tipologias img{
+    height: 110%;
+}

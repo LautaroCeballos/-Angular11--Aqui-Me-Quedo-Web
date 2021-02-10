@@ -1,0 +1,21 @@
+<header>        
+    <div class="center">
+        <div id="logo">
+            <a [routerLinkActive]="['active']">
+                <img src="../../../assets/images/logo.png" alt="Aqui Me Quedo">
+            </a>
+        </div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a [routerLink]="['/home']" [routerLinkActive]="['active']"><fa-icon [icon]="faHome" class="menu--icon"></fa-icon>Home</a></li>
+                <li><a [routerLink]="['/complejo']" [routerLinkActive]="['active']"><fa-icon [icon]="faBook" class="menu--icon"></fa-icon>Complejo</a></li>
+                <li><a [routerLink]="['/ubicacion']" [routerLinkActive]="['active']"><fa-icon [icon]="faMapSigns" class="menu--icon"></fa-icon>Ubicacion</a></li>
+                <li><a [routerLink]="['/traslasierras']" [routerLinkActive]="['active']"><fa-icon [icon]="faMountain" class="menu--icon"></fa-icon>Traslasierras</a></li>
+                <li><a [routerLink]="['/contacto']" [routerLinkActive]="['active']"><fa-icon [icon]="faAddressBook" class="menu--icon"></fa-icon>Contacto</a></li>
+            </ul>
+        </nav>
+        <div id="menu-toggle" class="menu-toggle" (click)="cambiarClase()">
+            <div class="hamburguesa"></div>
+        </div>
+    </div>
+</header>

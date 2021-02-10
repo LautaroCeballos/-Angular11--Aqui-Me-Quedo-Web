@@ -1,0 +1,47 @@
+/* Formulario de contacto CSS */
+.contact-form h3{
+    margin-bottom: 15px;
+}
+
+.contact-form form{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+}
+
+.contact-form label{
+    color: var(--main-color-text);
+    font-family: "Courgette-regular";
+    font-size: 20px;
+
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+    background-color: #FBDCB8;
+    border-style: none;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 3px;
+    margin: 5px 0 10px;
+}
+
+.contact-form textarea{
+    height: 100px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.contact-form input[type=submit]{
+    background-color: var(--main-color-text);
+    color: var(--light-degraded);
+    font-family: "Courgette-regular";
+    font-size: 17px;
+    grid-column: 4 / 5;
+}
+
+.group-name{grid-column: 1 / 3;}
+.group-tel{grid-column: 3 / 5;}
+.group-dtlls{grid-column: 1 / 5;}
+

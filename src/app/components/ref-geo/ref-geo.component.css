@@ -1,0 +1,41 @@
+/* Terminal CSS */
+
+.ubicacion-terminal h3,
+.ubicacion-terminal p{
+    margin-bottom: 10px;
+}
+
+.ubicacion-terminal .border{
+    height: 200px;
+}
+
+
+/* Balneario CSS */
+
+.ubicacion-balneario h3{
+    grid-column: 1 / 13;
+    margin-bottom: 10px;
+}
+
+.ubicacion-balneario p{
+    grid-column: 1 / 8;
+}
+
+.ubicacion-balneario .border{
+    grid-column: 8 / 13;
+}
+
+/* Feria CSS */
+
+.ubicacion-centro h3{
+    grid-column: 1 / 13;
+    margin-bottom: 10px;
+}
+
+.ubicacion-centro p{
+    grid-column: 6 / 13;
+}
+
+.ubicacion-centro .border{
+    grid-column: 1 / 6;
+}

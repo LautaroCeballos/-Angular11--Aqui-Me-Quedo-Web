@@ -1,0 +1,122 @@
+/* Footer CSS */
+
+footer{
+    background-color: var(--main-color-text);
+    margin-top: var(--margin-top-components);
+    color: var(--light-degraded);
+    font-family: "Leelawadee";
+    font-weight: bolder;
+}
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 20px 0;
+}
+
+footer a{
+    color: var(--light-degraded);
+    text-decoration: none;
+}
+
+.footer-redes-logo {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+    width: 250px;
+}
+
+.footer-redes{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    font-size: 40px;
+    width: 100%;
+}
+
+.footer-logo{
+    position: relative;
+    left: -7%;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .5));
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.footer-logo:active{
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0));
+    translate: 0 2px;
+}
+
+.foot-contact-group{
+    display: flex; 
+    flex-wrap: nowrap;
+    justify-content: end;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.foot-contact-group fa-icon{
+    width: 25px;
+}
+
+.copyright {
+	color: var(--main-color-text);
+	font-weight: lighter;
+	text-align: center;
+	width: 100%;
+	display: block;
+	font-size: 15px;
+    background-color: var(--light-degraded);
+    padding: 0 10px;
+}
+
+@media(max-width: 900px){
+    .footer-contacto{
+        font-size: .9em;
+    }    
+}
+
+@media(max-width: 600px){
+    .footer-contacto{
+        font-size: .85em;
+    }
+
+    .footer-redes-logo{
+        width: 200px;
+    }
+
+    .copyright{
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 500px){
+    .footer-contacto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .foot-contact-group{
+        display: flex;
+        text-align: left;
+    }
+
+    .foot-contact-group span{
+        order: 1;
+    }
+
+    .footer-redes{
+        margin-bottom: 10px;
+    }
+
+    .footer-logo{
+        margin-bottom: 15px;
+    }
+
+    .footer-redes-logo{
+        width: 250px;
+    }
+}

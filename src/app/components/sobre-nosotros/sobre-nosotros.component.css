@@ -1,0 +1,26 @@
+.sobre-nosotros{
+    margin-top: var(--margin-top-components);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sobre-nosotros .subheader{
+    /* grid-column: 1 / 13; */
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.sobre-nosotros-p{
+    /* grid-column: 1 / 8; */
+    width: 50%;
+}
+
+.sobre-nosotros-p p{
+    margin-bottom: 5px;
+}
+
+.s-nosotros-img{
+    /* grid-column: 8 / 13; */
+    height: 400px;
+    width: 50%;
+}

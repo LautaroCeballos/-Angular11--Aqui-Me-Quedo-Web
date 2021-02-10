@@ -1,0 +1,45 @@
+/* Redes CSS */
+
+.redes .subheader{
+    text-align: center;
+}
+
+.redes .separador{
+    justify-content: space-around;
+}
+
+.redes .separador-izq,
+.redes .separador-der{
+    width: 30%;
+}
+
+.redes a{
+    text-decoration: none;
+    color: var(--main-color-text);
+    font-size: 50px;
+    transition: all 200ms ease-in-out;
+}
+
+.redes a:hover{
+    opacity: .8;
+}
+
+
+@media(max-width: 700px){
+    .redes a{
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 500px){
+    .redes .separador-izq,
+    .redes .separador-der{
+        width: 25%;
+    }
+}
+
+@media(max-width: 450px){
+    .redes a{
+        margin: 0 10px;
+    }
+}

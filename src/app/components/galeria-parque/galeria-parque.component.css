@@ -1,0 +1,14 @@
+/* Parque CSS */
+.galeria-parque{
+    margin-top: 20px;
+}
+
+.slider-thumb{
+    margin-top: 15px;
+    height:100px;
+}
+
+.thumb-a{ grid-column: 1 / 4;}
+.thumb-b{ grid-column: 4 / 7;}
+.thumb-c{ grid-column: 7 / 10;}
+.thumb-d{ grid-column: 10 / 13;}

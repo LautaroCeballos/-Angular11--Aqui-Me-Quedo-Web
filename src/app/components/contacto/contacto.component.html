@@ -1,0 +1,63 @@
+<section class="contact-form">
+    <h3 class="subheader subrayed">
+        ¡Comunicate, reserva y conocenos!
+    </h3>
+
+    <form action="">
+        <div class="form-group group-name">
+            <label for="nombre">Nombre y Apellido: *</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre" required/>
+        </div>
+        <div class="form-group group-tel">
+            <label for="telefono">Telefono: *</label>
+            <input type="tel" id="telefono" placeholder="Escribe tu telefono"required/>
+        </div>
+        <div class="form-group group-dsd">
+            <label for="desde">Desde: *</label>
+            <input type="date" id="desde" required/>
+            <!-- Hay que establecerle fecha minima y un value en la fecha actual -->
+        </div>
+        <div class="form-group group-hst">
+            <label for="hasta">Hasta: *</label>
+            <input type="date" id="hasta" required/>
+            <!-- Hay que establecerle fecha minima y un value en la fecha actual -->
+        </div>
+        <div class="form-group group-may">
+            <label for="mayores">Mayores: *</label>
+            <!-- <input type="number" id="mayores" placeholder="¿Cuantos mayores son?"required/> -->
+            <select name="mayores" id="mayores" required>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+        </div>
+        <div class="form-group group-men">
+            <label for="menores">Menores: *</label>
+            <!-- <input type="number" id="menores" placeholder="¿Cuantos menores son?"required/> -->
+            <select name="menores" id="menores" required>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+        </div>
+        <div class="form-group group-dtlls">
+            <label for="detalles">Detalles: </label>
+            <textarea name="detalles" id="detalles" placeholder="Escribe mas detalles."></textarea>
+        </div>
+
+        <input type="submit" value="Enviar">
+    </form>
+</section>

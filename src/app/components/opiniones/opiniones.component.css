@@ -1,0 +1,204 @@
+.clientes input{
+    display: none;
+}
+
+.op-slides li{
+    list-style: none;
+}
+
+/* Opiniones CSS */
+
+.op-container{
+    padding: 20px;
+}
+
+.op-izq, .op-der{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.op-izq{
+    margin-top: 20px;
+}
+
+.op-content{
+    width: 80%;
+}
+
+.op-ico fa-icon{
+    font-size: 70px;
+}
+
+.op-header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.op-nombre{
+    font-family: "Courgette";
+    font-size: 17px;
+}
+
+.op-estrellas{
+    color: #F3D618;
+}
+
+.op-testimonio{
+    text-align: center;
+}
+
+.op-reco{
+    margin: 30px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.op-reco button{
+    color: var(--main-color-text);
+    background-color: rgba(0,0,0,0);
+    border-style: none;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all .1s ease-out;
+    outline: 0;
+    font-size: 60px;
+    margin: 0 10px;
+}
+
+.op-reco button:active{
+    font-size: 55px;
+}
+
+/* Media Querys */
+
+
+@media(max-width: 700px){
+    .op-izq, .op-der{
+        width: 100%;
+    }
+}
+
+@media(max-width: 600px){
+    .op-container{
+        padding: 20px 10px;
+    }
+
+    .op-estrellas{
+        font-size: .8em;
+    }
+
+    .op-ico fa-icon{
+        font-size: 50px;
+    }
+
+    .op-reco button{
+        font-size: 50px;
+        margin: 0 5px;
+    }
+    .op-reco button:active{
+        font-size: 45px;
+    }
+}
+
+@media(max-width: 450px){
+    .op-ico,
+    .op-fecha{
+        display: none;
+    }
+    .op-izq{
+        margin-top: 0;
+    }
+
+    .op-content{
+        width: 90%;
+    }
+
+    .op-reco{
+        margin: 40px auto 0;
+    }
+
+    .op-reco button{
+        font-size: 40px;
+        margin: 0 5px;
+    }
+    .op-reco button:active{
+        font-size: 35px;
+    }
+
+    /* Slider CSS */
+    .clientes{
+        max-width: 750px;
+        margin: auto;
+        overflow-x: hidden;
+    }
+    
+    .clientes .op-slides{
+        width: 400%;
+        left: 0;
+        padding-left: 0;
+        overflow: hidden;
+        position: relative;
+        transition: all .8s ease-in-out;
+    }
+    
+    .op-slides li{
+        width: 25%;
+        position: relative;
+        float: left;
+    }
+    
+    
+    .op-navegacion {
+        position: absolute;
+        width: 104px;
+        left: 50%;
+        margin-top: 5px;
+        margin-left: -52px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .op-navegacion label{
+        margin: 6px;
+        display: block;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border: solid 2px var(--main-color-text);
+    }
+    
+    .op-navegacion label:hover{
+        cursor: pointer;
+    }
+    
+    #op-radio1:checked ~ .op-slides{
+        transform: translateX(0%);
+    }
+    #op-radio2:checked ~ .op-slides{
+        transform: translateX(-25%);
+    }
+    #op-radio3:checked ~ .op-slides{
+        transform: translateX(-50%);
+    }
+    
+    #op-radio1:checked ~ .op-navegacion label#op-radioSelect1,
+    #op-radio2:checked ~ .op-navegacion label#op-radioSelect2,
+    #op-radio3:checked ~ .op-navegacion label#op-radioSelect3{
+        background-color: var(--main-color-text);
+    }    
+}
+
+@media(max-width: 350px){
+    .op-reco button{
+        font-size: 35px;
+    }
+    .op-reco button:active{
+        font-size: 30px;
+    }
+}
