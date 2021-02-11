@@ -1,6 +1,6 @@
 /* Tipologias CSS */
 
-.tipo-cab-img,
+/* .tipo-cab-img,
 .tipo-casa-text{
     margin-top: var(--margin-top-components);
     grid-column: 1 / 7;
@@ -14,4 +14,22 @@
 
 .tipologias img{
     height: 110%;
+} */
+
+.tipo-cabana .serv-list-container{
+    grid-column: 2/3;
+}
+
+.tipo-cabana .serv-list-img{
+    grid-column: 1/2;
+}
+
+@media(max-width: 550px){
+    .tipo-cabana .serv-list-container{
+        background-image: url(../../../assets/images/tipologias/cabaña.jpg);
+    }
+
+    .tipo-casa .serv-list-container{
+        background-image: url(../../../assets/images/tipologias/casa.jpg);
+    }
 }
