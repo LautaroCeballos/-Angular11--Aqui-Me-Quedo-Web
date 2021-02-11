@@ -1,20 +1,8 @@
 /* Tipologias CSS */
 
-/* .tipo-cab-img,
-.tipo-casa-text{
-    margin-top: var(--margin-top-components);
-    grid-column: 1 / 7;
+.tipo-cabana{
+    margin-bottom: 35px;
 }
-
-.tipo-casa-img,
-.tipo-cab-text{
-    margin-top: var(--margin-top-components);
-    grid-column: 7 / 13;
-}
-
-.tipologias img{
-    height: 110%;
-} */
 
 .tipo-cabana .serv-list-container{
     grid-column: 2/3;
@@ -22,6 +10,18 @@
 
 .tipo-cabana .serv-list-img{
     grid-column: 1/2;
+}
+
+@media(max-width: 700px){
+    .tipo-cabana .serv-list-img{
+        height: 260px;
+    }
+}
+
+@media(max-width: 600px){
+    .tipologias .serv-list-img{
+        height: 230px;
+    }
 }
 
 @media(max-width: 550px){

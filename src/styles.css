@@ -113,7 +113,7 @@ section{
 /* .serv-list-container{grid-column: 1 / 2;} */
 
 .serv-list-img{
-    /* grid-column: 2 / 3; */
+    margin-top: 10px;
     height: 310px;
 }
 
@@ -202,6 +202,8 @@ section{
         font-weight:500;
         background-color: #120201d8;
         margin: 20px auto;
+        padding: 5px;
+        border-radius: 3px;
         list-style: none;
         text-align: center;
         width: 80%;

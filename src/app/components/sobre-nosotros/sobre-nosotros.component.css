@@ -38,16 +38,16 @@
 }
 
 @media(max-width: 450px){
-    /* .servicios-home{
+    .sobre-nosotros{
         display: block;
     }
 
-    .serv-home-img{
+    .s-nosotros-img{
         display: none;
     }
 
-    .serv-home-text{
-        background-image: url(../../../assets/images/serv-home.jpg);
+    .sobre-nosotros p{
+        background-image: url(../../../assets/images/sobre-nosotros.jpg);
         background-size: cover;
         background-origin: content-box;
         background-repeat: no-repeat;
@@ -55,19 +55,19 @@
         border: 2px solid var(--main-color-text);
     }
 
-    .servicios-home h3{
+    .sobre-nosotros h3{
         border-style: none;
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
-    .serv-home-text ul{
+    .sobre-nosotros span{
         background-image: none;
         border-style: none;
         font-weight:500;
         background-color: #120201d8;
-        margin: 20px auto;
-        list-style: none;
-        text-align: center;
+        margin: 15px auto;
+        padding: 5px;
+        border-radius: 3px;
         width: 80%;
-    } */
+    }
 }

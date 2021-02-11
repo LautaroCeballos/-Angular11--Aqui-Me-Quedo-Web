@@ -1,14 +1,31 @@
 /* Parque CSS */
 .galeria-parque{
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
 }
 
 .slider-thumb{
-    margin-top: 15px;
+    margin-top: 5px;
     height:100px;
 }
 
-.thumb-a{ grid-column: 1 / 4;}
-.thumb-b{ grid-column: 4 / 7;}
-.thumb-c{ grid-column: 7 / 10;}
-.thumb-d{ grid-column: 10 / 13;}
+@media(max-width: 700px){
+    .slider-thumb{
+        height: 80px;
+    }
+}
+
+@media(max-width: 450px){
+    .galeria-parque{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5px;
+    }
+
+    .slider-thumb{
+        height: 120px;
+    }
+
+
+}
