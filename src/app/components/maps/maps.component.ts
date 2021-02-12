@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 @Component({
   selector: 'app-maps',
@@ -8,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  center = {lat: 24, lng: 12};
+  lat= -31.722255506436593; 
+  lng= -65.008289713163;
   zoom = 15;
-  display?: google.maps.LatLngLiteral;
 
   constructor() { }
 

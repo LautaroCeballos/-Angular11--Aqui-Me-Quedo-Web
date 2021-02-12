@@ -1,6 +1,6 @@
 /* Mapa CSS*/
-
-.google-maps{
-    height: 200px;
+agm-map{
     background-color: darkgray;
+    height: 200px !important;
+    width: 100% !important;
 }

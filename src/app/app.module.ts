@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
-
-import { GoogleMapsModule } from '@angular/google-maps';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -56,7 +55,9 @@ import { QueVisitarComponent } from './components/que-visitar/que-visitar.compon
     BrowserModule,
     FontAwesomeModule,
     routing,
-    GoogleMapsModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB4jhQXWJ1FobS9D4cLUveBrTeJjiMl7Uk'
+    })
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
