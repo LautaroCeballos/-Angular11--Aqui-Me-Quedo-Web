@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 
+import { GoogleMapsModule } from '@angular/google-maps';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SliderHomeComponent } from './components/slider-home/slider-home.component';
@@ -53,7 +55,8 @@ import { QueVisitarComponent } from './components/que-visitar/que-visitar.compon
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    routing
+    routing,
+    GoogleMapsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

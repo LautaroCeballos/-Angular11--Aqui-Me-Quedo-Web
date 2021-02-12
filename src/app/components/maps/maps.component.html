@@ -2,7 +2,13 @@
     <h3 class="subheader">Te esperamos aqui...</h3>
     <div class="border">
         <div class="container-img">
-            <div class="google-maps"></div>
+            <!-- <div class="google-maps"></div> -->
+            <google-map
+                width="750px"
+                height="450px"
+                [center]="center"
+                [zoom]="zoom"
+            ></google-map>
         </div>
     </div>
 </section>
