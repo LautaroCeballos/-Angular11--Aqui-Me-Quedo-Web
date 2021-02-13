@@ -1,41 +1,79 @@
 /* Terminal CSS */
 
-.ubicacion-terminal h3,
-.ubicacion-terminal p{
+.ref{
+    margin-bottom: 30px;
+}
+
+.ref-geo h3{
     margin-bottom: 10px;
 }
 
-.ubicacion-terminal .border{
+.ref-geo h3 fa-icon{
+    float: right;
+    display: none;
+}
+
+.ref-terminal p{
+    margin-bottom: 10px;
+}
+
+.ref-terminal .border{
     height: 200px;
 }
 
 
 /* Balneario CSS */
 
-.ubicacion-balneario h3{
-    grid-column: 1 / 13;
-    margin-bottom: 10px;
-}
-
-.ubicacion-balneario p{
+.ref-balneario p{
     grid-column: 1 / 8;
 }
 
-.ubicacion-balneario .border{
+.ref-balneario .ref-img{
     grid-column: 8 / 13;
 }
 
 /* Feria CSS */
 
-.ubicacion-centro h3{
-    grid-column: 1 / 13;
-    margin-bottom: 10px;
-}
-
-.ubicacion-centro p{
+.ref-centro p{
     grid-column: 6 / 13;
 }
 
-.ubicacion-centro .border{
+.ref-centro .ref-img{
     grid-column: 1 / 6;
+}
+
+@media(max-width: 700px){
+    .ref-geo h3{
+        font-size: 22px;
+    }
+}
+
+@media(max-width: 500px){
+    .ref-geo h3{
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .ref-geo h3 fa-icon{
+        display: inline;
+    }
+
+    .ref-content{
+        display: none;
+        /* display: flex;
+        flex-wrap: wrap; */
+    }
+
+    .ref-content p{
+        margin-bottom: 10px;
+    }
+
+    .ref-img{
+        height: 200px;
+        width: 100%;
+    }
+
+    .ref-centro .ref-content{
+        flex-wrap: wrap-reverse;
+    }
 }

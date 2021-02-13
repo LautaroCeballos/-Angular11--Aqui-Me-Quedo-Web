@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-ref-geo',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ref-geo.component.css']
 })
 export class RefGeoComponent implements OnInit {
+
+  faAngleRight = faAngleRight;
 
   constructor() { }
 
