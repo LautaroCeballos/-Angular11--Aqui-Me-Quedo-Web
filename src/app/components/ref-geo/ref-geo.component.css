@@ -1,14 +1,20 @@
+
 /* Terminal CSS */
+.ref-geo input{
+    display: none;
+}
 
 .ref{
     margin-bottom: 30px;
 }
 
-.ref-geo h3{
+.ref-geo label{
+    width: 100%;
+    display: block;
     margin-bottom: 10px;
 }
 
-.ref-geo h3 fa-icon{
+.ref-geo label fa-icon{
     float: right;
     display: none;
 }
@@ -43,25 +49,27 @@
 }
 
 @media(max-width: 700px){
-    .ref-geo h3{
+    .ref-geo label{
         font-size: 22px;
     }
 }
 
 @media(max-width: 500px){
-    .ref-geo h3{
+    .ref-geo label{
         font-size: 18px;
         cursor: pointer;
     }
 
-    .ref-geo h3 fa-icon{
+    .ref-geo label fa-icon{
         display: inline;
     }
 
     .ref-content{
-        display: none;
-        /* display: flex;
-        flex-wrap: wrap; */
+        display: flex;
+        overflow: hidden;
+        transition: max-height .6s ease-in-out;
+        max-height: 0;
+        flex-wrap: wrap;
     }
 
     .ref-content p{
@@ -76,4 +84,21 @@
     .ref-centro .ref-content{
         flex-wrap: wrap-reverse;
     }
+
+    #ref-radio1:checked ~ .ref-terminal .ref-content{
+        max-height: 1000px;
+    }
+    #ref-radio2:checked ~ .ref-balneario .ref-content{
+        max-height: 1000px;
+    }
+    #ref-radio3:checked ~ .ref-centro .ref-content{
+        max-height: 1000px;
+    }
+    
+    #ref-radio1:checked ~ .ref-terminal fa-icon,
+    #ref-radio2:checked ~ .ref-balneario fa-icon,
+    #ref-radio3:checked ~ .ref-centro fa-icon{
+        transform: rotate(90deg) !important;
+        transition: all 300ms ease-in-out;
+    }  
 }
