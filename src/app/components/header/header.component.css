@@ -61,7 +61,7 @@ header .center{
 .menu a{
     color: var(--main-color-text);
     font-family: "Courgette-Regular";
-    font-size: 14px;
+    font-size: 16px;
     display: block;
     text-decoration: none;
 }
@@ -113,7 +113,7 @@ header .center{
 
 @media(max-width: 700px){    
     .menu a{
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .normalize-text{
