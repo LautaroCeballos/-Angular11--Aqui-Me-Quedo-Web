@@ -21,11 +21,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './components/home/home.component';
 import { ComplejoComponent } from './components/complejo/complejo.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
-import { TraslasierrasComponent } from './components/traslasierras/traslasierras.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RefGeoComponent } from './components/ref-geo/ref-geo.component';
-import { QueVisitarComponent } from './components/que-visitar/que-visitar.component';
 
 @NgModule({
   declarations: [
@@ -45,11 +43,9 @@ import { QueVisitarComponent } from './components/que-visitar/que-visitar.compon
     HomeComponent,
     ComplejoComponent,
     UbicacionComponent,
-    TraslasierrasComponent,
     ContactoComponent,
     ErrorComponent,
-    RefGeoComponent,
-    QueVisitarComponent,
+    RefGeoComponent
   ],
   imports: [
     BrowserModule,
