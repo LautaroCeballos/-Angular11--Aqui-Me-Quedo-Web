@@ -1,5 +1,5 @@
-<section id="slider-home">
-    <div class="slider-main-img">
+<!-- <section id="slider-home">
+    <div class="slider-main-img" #sliderMain>
         <div class="border">
             <div class="container-img">
                 <img src="../../../assets/images/slider-home/img1.jpg" alt="fachada">
@@ -8,28 +8,28 @@
     </div>
 
     <div class="thumbs">
-        <div class="slider-thumb">
+        <div class="slider-thumb" (click)="slideTo($event)">
             <div class="border">
                 <div class="container-img">
                     <img src="../../../assets/images/slider-home/img2.jpg" alt="habitacion">
                 </div>
             </div>
         </div>
-        <div class="slider-thumb">
+        <div class="slider-thumb" (click)="slideTo($event)"> 
             <div class="border">
                 <div class="container-img">
                     <img src="../../../assets/images/slider-home/img3.jpg" alt="habitacion">
                 </div>
             </div>
         </div>
-        <div class="slider-thumb">
+        <div class="slider-thumb" (click)="slideTo($event)">
             <div class="border">
                 <div class="container-img">
                     <img src="../../../assets/images/slider-home/img4.jpg" alt="habitacion">
                 </div>
             </div>
         </div>
-        <div class="slider-thumb">
+        <div class="slider-thumb" (click)="slideTo($event)">
             <div class="border">
                 <div class="container-img">
                     <img src="../../../assets/images/slider-home/img5.jpg" alt="habitacion">
@@ -38,3 +38,25 @@
         </div>
     </div>
 </section>
+ -->
+
+<div class="slider-home">
+    <div class="carousel">
+        <ng-container *ngFor="let slide of slides; let i = index">
+            <img 
+                [src]="slide.src" 
+                class= "slide" 
+                *ngIf="i === currentSlide"
+                @carouselAnimation
+            />
+        </ng-container>
+    
+        <!-- controls -->
+        <button class="control prev" (click)="onPreviousClick()">
+            <span class="arrow left"></span>
+        </button>
+        <button class="control next" (click)="onNextClick()">
+            <span class="arrow right"></span>
+        </button>
+    </div>
+</div>

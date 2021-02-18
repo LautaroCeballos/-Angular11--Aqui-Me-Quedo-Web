@@ -52,7 +52,7 @@ footer a{
 .foot-contact-group{
     display: flex; 
     flex-wrap: nowrap;
-    justify-content: end;
+    justify-content: flex-end;
     margin-bottom: 10px;
     text-align: right;
 }

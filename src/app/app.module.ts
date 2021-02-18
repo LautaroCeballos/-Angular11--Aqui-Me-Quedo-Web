@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 import { AgmCoreModule } from '@agm/core';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -45,7 +46,7 @@ import { RefGeoComponent } from './components/ref-geo/ref-geo.component';
     UbicacionComponent,
     ContactoComponent,
     ErrorComponent,
-    RefGeoComponent
+    RefGeoComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +54,8 @@ import { RefGeoComponent } from './components/ref-geo/ref-geo.component';
     routing,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB4jhQXWJ1FobS9D4cLUveBrTeJjiMl7Uk'
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
