@@ -1,25 +1,56 @@
 <section class="consultar">
     <h3 class="subheader">Consulta tu disponibilidad...</h3>
-    <form action="" method="POST" class="normalize-text">
+    <form action="" method="POST" class="normalize-text" #consultaForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="border">
             <div class="form-group">
-                <label for="llegada">Llegada<fa-icon [icon]="faCalendarAlt"></fa-icon></label>
-                <input type="date" id="llegada">
+                <div class="input-select select-adultos">
+                    <select name="adultos" id=adultos #adultos="ngModel" [(ngModel)]="consulta.cantAdultos">
+                        <option value="">Adultos</option>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                        <option value="4">4 Adultos</option>
+                        <option value="5">5 Adultos</option>
+                        <option value="6">6 Adultos</option>
+                        <option value="7">7 Adultos</option>
+                        <option value="8">8 Adultos</option>
+                    </select>
+                    <fa-icon [icon]="faSortDown"></fa-icon>
+                </div>
             </div>
             <div class="form-group">
-                <label for="salida">Salida<fa-icon [icon]="faCalendarAlt"></fa-icon></label>
-                <input type="date" id="salida">
+                <div class="input-select select-ninos">
+                    <select name="ninos" id=ninos #ninos="ngModel" [(ngModel)]="consulta.cantNinos">
+                        <option value="">Niños</option>
+                        <option value="0">Sin Niños</option>
+                        <option value="1">1 Niño</option>
+                        <option value="2">2 Niños</option>
+                        <option value="3">3 Niños</option>
+                        <option value="4">4 Niños</option>
+                        <option value="5">5 Niños</option>
+                        <option value="6">6 Niños</option>
+                    </select>
+                    <fa-icon [icon]="faSortDown"></fa-icon>
+                </div>
             </div>
             <div class="form-group">
-                <label for="adultos">Adultos<fa-icon [icon]="faSortDown"></fa-icon></label>
-                <input type="number" id="adultos">
+                <label for="llegada">
+                    <span *ngIf="!consulta.llegada">Llegada</span>
+                    {{consulta.llegada | date}}
+                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                </label>
+                <input type="date" id="llegada" name="llegada" #llegada="ngModel" [(ngModel)]="consulta.llegada">
             </div>
             <div class="form-group">
-                <label for="ninos">Niños<fa-icon [icon]="faSortDown"></fa-icon></label>
-                <input type="number" id="ninos">
+                <label for="salida">
+                    <span *ngIf="!consulta.salida">Salida</span>
+                    {{consulta.salida | date}}
+                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                </label>
+                <input type="date" name="salida" #salida="ngModel" [(ngModel)]="consulta.salida" id="salida">
             </div>
         </div>
-        
+
         <button type="submit">Consultar Ahora</button>
     </form>
 

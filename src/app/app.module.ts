@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -55,7 +56,8 @@ import { RefGeoComponent } from './components/ref-geo/ref-geo.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB4jhQXWJ1FobS9D4cLUveBrTeJjiMl7Uk'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

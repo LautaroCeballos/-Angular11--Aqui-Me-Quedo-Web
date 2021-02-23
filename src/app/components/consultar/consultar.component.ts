@@ -10,9 +10,24 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 export class ConsultarComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;
   faSortDown = faSortDown;
-  constructor() { }
+
+  public consulta: any;
+
+  constructor() { 
+    this.consulta = {
+      llegada: '',
+      salida: '',
+      cantAdultos: '',
+      cantNinos: ''
+    }
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    alert("Formulario Enviado");
+    console.log(this.consulta);
   }
 
 }
