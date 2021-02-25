@@ -4,12 +4,16 @@
 
 .op-slides li{
     list-style: none;
+    border-bottom: 1px solid var(--main-color-text);
+    padding: 15px 0;
+    text-align: center;
 }
 
 /* Opiniones CSS */
 
 .op-container{
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+    /* padding: 20px; */
 }
 
 .op-izq, .op-der{
@@ -19,10 +23,12 @@
     align-items: center;
     width: 80%;
     margin: 0 auto;
+    /* margin-top: 20px; */
 }
 
-.op-izq{
-    margin-top: 20px;
+
+.op-izq .op-content{
+    order: 1;
 }
 
 .op-content{
@@ -51,6 +57,25 @@
 
 .op-testimonio{
     text-align: center;
+}
+
+.toggleMasMenos{
+	margin: 10px;
+	padding: 5px 10px;
+	background-color: var(--main-color-text);
+	border: none;
+	color: var(--light-degraded);
+	font-family: "Courgette-Regular";
+	border-radius: 5px;
+	font-size: 1em;
+	cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.toggleMasMenos:hover{
+    opacity: .9;
+}
+.toggleMasMenos:focus{
+    transform: scale(.9);
 }
 
 .op-reco{
@@ -86,7 +111,7 @@
 
 @media(max-width: 600px){
     .op-container{
-        padding: 20px 10px;
+        padding: 0px 10px 20px;
     }
 
     .op-estrellas{
@@ -120,7 +145,7 @@
     }
 
     .op-reco{
-        margin: 40px auto 0;
+        margin: 15px auto 0;
     }
 
     .op-reco button{
@@ -139,7 +164,7 @@
     }
     
     .clientes .op-slides{
-        width: 400%;
+        width: 800%;
         left: 0;
         padding-left: 0;
         overflow: hidden;
@@ -148,20 +173,19 @@
     }
     
     .op-slides li{
-        width: 25%;
+        width: 12.5%;
         position: relative;
         float: left;
+        border-bottom: none;
+        padding-bottom: 0;
     }
     
     
     .op-navegacion {
-        position: absolute;
-        width: 104px;
-        left: 50%;
-        margin-top: 5px;
-        margin-left: -52px;
+        margin-top: 10px;
         display: flex;
         justify-content: center;
+        width: 100%;
     }
     
     .op-navegacion label{
@@ -181,15 +205,23 @@
         transform: translateX(0%);
     }
     #op-radio2:checked ~ .op-slides{
-        transform: translateX(-25%);
+        transform: translateX(-12.5%);
     }
     #op-radio3:checked ~ .op-slides{
+        transform: translateX(-25%);
+    }
+    #op-radio4:checked ~ .op-slides{
+        transform: translateX(-37.5%);
+    }
+    #op-radio5:checked ~ .op-slides{
         transform: translateX(-50%);
     }
     
     #op-radio1:checked ~ .op-navegacion label#op-radioSelect1,
     #op-radio2:checked ~ .op-navegacion label#op-radioSelect2,
-    #op-radio3:checked ~ .op-navegacion label#op-radioSelect3{
+    #op-radio3:checked ~ .op-navegacion label#op-radioSelect3,
+    #op-radio4:checked ~ .op-navegacion label#op-radioSelect4,
+    #op-radio5:checked ~ .op-navegacion label#op-radioSelect5{
         background-color: var(--main-color-text);
     }    
 }

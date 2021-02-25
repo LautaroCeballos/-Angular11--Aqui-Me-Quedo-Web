@@ -40,6 +40,7 @@
     font-family: "Courgette-regular";
     font-size: 17px;
     grid-column: 4 / 5;
+    cursor: pointer;
 }
 
 .group-name{grid-column: 1 / 3;}

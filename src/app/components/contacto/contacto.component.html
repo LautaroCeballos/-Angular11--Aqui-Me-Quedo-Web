@@ -3,29 +3,29 @@
         ¡Comunicate, reserva y conocenos!
     </h3>
 
-    <form action="">
+    <form method="POST" #contactoForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group group-name">
             <label for="nombre">Nombre y Apellido: *</label>
-            <input type="text" id="nombre" placeholder="Escribe tu nombre" required/>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre"/>
         </div>
         <div class="form-group group-tel">
             <label for="telefono">Telefono: *</label>
-            <input type="tel" id="telefono" placeholder="Escribe tu telefono"required/>
+            <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu telefono" #telefono="ngModel" [(ngModel)]="contacto.telefono"/>
         </div>
         <div class="form-group group-dsd">
             <label for="desde">Desde: *</label>
-            <input type="date" id="desde" required/>
+            <input type="date" id="desde" name="desde" #desde="ngModel" [(ngModel)]="contacto.desde"/>
             <!-- Hay que establecerle fecha minima y un value en la fecha actual -->
         </div>
         <div class="form-group group-hst">
             <label for="hasta">Hasta: *</label>
-            <input type="date" id="hasta" required/>
+            <input type="date" id="hasta" name="hasta" #hasta="ngModel" [(ngModel)]="contacto.hasta"/>
             <!-- Hay que establecerle fecha minima y un value en la fecha actual -->
         </div>
         <div class="form-group group-may">
             <label for="mayores">Mayores: *</label>
-            <!-- <input type="number" id="mayores" placeholder="¿Cuantos mayores son?"required/> -->
-            <select name="mayores" id="mayores" required>
+            <!-- <input type="number" id="mayores" placeholder="¿Cuantos mayores son?"/> -->
+            <select name="mayores" id="mayores" #mayores="ngModel" [(ngModel)]="contacto.cantMayores" >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -40,7 +40,7 @@
         <div class="form-group group-men">
             <label for="menores">Menores: *</label>
             <!-- <input type="number" id="menores" placeholder="¿Cuantos menores son?"required/> -->
-            <select name="menores" id="menores" required>
+            <select name="menores" id="menores" #menores="ngModel" [(ngModel)]="contacto.cantMenores">
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
@@ -55,7 +55,7 @@
         </div>
         <div class="form-group group-dtlls">
             <label for="detalles">Detalles: </label>
-            <textarea name="detalles" id="detalles" placeholder="Escribe mas detalles."></textarea>
+            <textarea name="detalles" id="detalles" placeholder="Escribe mas detalles." #detalles="ngModel" [(ngModel)]="contacto.detalles"></textarea>
         </div>
 
         <input type="submit" value="Enviar">

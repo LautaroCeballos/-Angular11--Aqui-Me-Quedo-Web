@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
-  constructor() { }
+  public contacto: any;
+
+  constructor() { 
+    this.contacto = {
+      nombre: '',
+      telefono: '',
+      desde: '',
+      hasta: '',
+      cantMayores: '',
+      cantMenores: '',
+      detalles: ''
+
+    }
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    alert("Formulario Enviado");
+    console.log(this.contacto);
   }
 
 }

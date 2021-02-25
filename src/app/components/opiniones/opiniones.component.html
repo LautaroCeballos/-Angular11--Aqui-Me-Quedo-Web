@@ -3,59 +3,47 @@
     <div class="op-container normalize-text border">
 
         <article class="clientes">
-            <input type="radio" name="op-slides" id="op-radio1" checked>
+            <ng-container *ngFor="let testimonio of testimonios; let i = index;">
+                <input type="radio" name="op-slides" id="{{'op-radio' + (i + 1)}}" checked>
+            </ng-container>
+            
             <input type="radio" name="op-slides" id="op-radio2">
+
+            <input for="" type="radio" name="op-slides" id="op-radio">
+
             <ul class="op-slides">
-                <li>
-                    <article class="op-der">
-                        <div class="op-content">
-                            <div class="op-header">
-                                <span class="op-nombre">Lautaro Ceballos</span>
-                                <span class="op-estrellas">
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="farStar"></fa-icon>
-                                </span>
-                                <span class="op-fecha">01/01/2020</span>
+                <ng-container *ngFor="let testimonio of testimonios; let i = index;" >
+                    <li [style.display]="i >= 2 && shortView ? 'none' : 'block'" >
+                        <article [ngClass]="{ 'op-der': i % 2 == 0, 'op-izq': i % 2 != 0}">
+                            <div class="op-content">
+                                <div class="op-header">
+                                    <span class="op-nombre">{{testimonio.nombre}}</span>
+                                    <span class="op-estrellas">
+                                        <ng-container *ngFor="let star of [].constructor(5); let i = index;">
+                                            <fa-icon *ngIf="i < testimonio.clasificacion" [icon]="fasStar"></fa-icon>
+                                            <fa-icon *ngIf="i >= testimonio.clasificacion" [icon]="farStar"></fa-icon>
+                                        </ng-container>
+                                    </span>
+                                    <span class="op-fecha">{{testimonio.fecha | date}}</span>
+                                </div>
+                                <div class="op-testimonio">
+                                    {{testimonio.detalle}}
+                                </div>
                             </div>
-                            <div class="op-testimonio">
-                                Hermoso complejo y excelente la atencion. La pasamos muy bien
+                            <div class="op-ico">
+                                <fa-icon [icon]="clasIcon[testimonio.clasificacion-1]"></fa-icon>
                             </div>
-                        </div>
-                        <div class="op-ico">
-                            <fa-icon [icon]="faSmileBeam"></fa-icon>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="op-izq">
-                        <div class="op-ico">
-                            <fa-icon [icon]="faGrinHearts"></fa-icon>
-                        </div>
-                        <div class="op-content">
-                            <div class="op-header">
-                                <span class="op-nombre">Euge Caceres</span>
-                                <span class="op-estrellas">
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="fasStar"></fa-icon>
-                                    <fa-icon [icon]="farStar"></fa-icon>
-                                </span>
-                                <span class="op-fecha">01/01/2020</span>
-                            </div>
-                            <div class="op-testimonio">
-                                Un hermoso lugar, muy acojedor y lleno de bellos recuerdos
-                            </div>
-                        </div>
-                    </article>
-                </li>
+                        </article>
+    
+                        <button class="toggleMasMenos" *ngIf="desktopView && shortView && i == 1" (click)="toggleMasComentarios()">Mostrar mas</button>
+                        <button class="toggleMasMenos" *ngIf="desktopView && !shortView && i == (testimonios.length - 1)" (click)="toggleMasComentarios()">Mostrar menos</button>
+                    </li>
+                </ng-container>
             </ul>
             <div class="op-navegacion">
-                <label for="op-radio1" id="op-radioSelect1"></label>
-                <label for="op-radio2" id="op-radioSelect2"></label>
+                <ng-container *ngFor="let testimonio of testimonios let i = index;">
+                    <label for="{{'op-radio' + (i + 1)}}" id="{{'op-radioSelect' + (i + 1)}}"></label>
+                </ng-container>
             </div>
         </article>
 
@@ -63,11 +51,11 @@
 
             <h4 class="subtitle">¿Ya nos conoces? Recomendanos</h4>
 
-            <button><fa-icon [icon]="faAngry"></fa-icon></button>
-            <button><fa-icon [icon]="faFrown"></fa-icon></button>
-            <button><fa-icon [icon]="faMehBlank"></fa-icon></button>
-            <button><fa-icon [icon]="faSmileBeam"></fa-icon></button>
-            <button><fa-icon [icon]="faGrinHearts"></fa-icon></button>
+            <button id="1Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faAngry"></fa-icon></button>
+            <button id="2Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faFrown"></fa-icon></button>
+            <button id="3Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faMehBlank"></fa-icon></button>
+            <button id="4Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faSmileBeam"></fa-icon></button>
+            <button id="5Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faGrinHearts"></fa-icon></button>
         </article>
     </div>
 </section>
