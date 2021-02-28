@@ -1,0 +1,34 @@
+<div class="background-blur">
+    <div class="opiniones-content">        
+        <div class="header-op-form">
+            <fa-icon [icon]="faTimes" (click)="closeOpForm()"></fa-icon>
+            <h2 class="subtitle">¡Envianos tu recomendación!</h2>
+        </div>
+        
+        <form class="opiniones-form" #modalForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name-op-form">¿Cual es tu nombre?</label>
+                <input type="text" id="name-op-form" name="name-op-form" #nombre="ngModel" [(ngModel)]="testimonio.nombre" focus/>
+            </div>
+            <div class="form-group">
+                <label for="reco-op-form">¿Como fue tu experiencia?</label>
+                <select name="reco-op-form" id="reco-op-form" #clasificacion="ngModel" [(ngModel)]="testimonio.clasificacion">
+                    <option value="1">Muy mala</option>
+                    <option value="2">Mala</option>
+                    <option value="3">Regular</option>
+                    <option value="4">Muy Buena</option>
+                    <option value="5">Excelente</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha-op-form">¿Cuando nos visitaste?</label>
+                <input type="date" id="fecha-op-form" name="fecha-op-form" #fecha="ngModel" [ngModel]="testimonio.fecha | date: 'yyyy-MM-dd'" (ngModelChange)="testimonio.fecha = $event"/>
+            </div>
+            <div class="form-group">
+                <label for="detalle-op-form">¿Como fue tu estadia con nosotros?</label>
+                <textarea name="detalle-op-form" id="detalle-op-form" #detalle="ngModel" [(ngModel)]="testimonio.detalle"></textarea>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>

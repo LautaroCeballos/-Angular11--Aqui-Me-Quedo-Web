@@ -5,8 +5,6 @@ import { faStar as fasStar, faAngry, faFrown, faMehBlank, faSmileBeam, faGrinHea
 import { Testimonio } from '../../models/testimonio';
 import { TestimonioService } from '../../services/testimonio.service';
 
-
-
 @Component({
   selector: 'app-opiniones',
   templateUrl: './opiniones.component.html',
@@ -26,6 +24,8 @@ export class OpinionesComponent implements OnInit {
   public clasIcon: Array<IconDefinition>;
   public shortView: Boolean;
   public desktopView: Boolean;
+  public viewFormModal: Boolean;
+  public expValue: Number;
 
   constructor(
     private _testimonioService: TestimonioService
@@ -36,11 +36,17 @@ export class OpinionesComponent implements OnInit {
     this.testimonios = this._testimonioService.getAllTestimonios();
     this.desktopView = screen.width > 450 ? true : false;
     this.shortView = this.desktopView ? true : false;
+    this.viewFormModal = false;
   }
 
   newTestimonio(event){
-    alert("Se agrega un nuevo testimonio");
-    console.log(event.srcElement.ownerDocument.activeElement.id);
+    let clasificacion = event.srcElement.ownerDocument.activeElement.id;
+    this.expValue = parseInt(clasificacion.substring(0, 1));
+    this.viewFormModal = true;
+  }
+
+  cerrarModal(){
+    this.viewFormModal = false;
   }
 
   toggleMasComentarios(){

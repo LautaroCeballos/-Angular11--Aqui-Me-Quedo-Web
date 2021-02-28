@@ -56,6 +56,15 @@
             <button id="3Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faMehBlank"></fa-icon></button>
             <button id="4Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faSmileBeam"></fa-icon></button>
             <button id="5Stars" (click)="newTestimonio($event)"><fa-icon [icon]="faGrinHearts"></fa-icon></button>
+
+            <ng-container *ngIf="viewFormModal">
+                <app-opiniones-form 
+                    [experiencia]="expValue"
+                    (cerrarModal)="cerrarModal()"            
+                ></app-opiniones-form>
+            </ng-container>
+
+            
         </article>
     </div>
 </section>

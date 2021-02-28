@@ -27,7 +27,7 @@
             <!-- <input type="number" id="mayores" placeholder="¿Cuantos mayores son?"/> -->
             <select name="mayores" id="mayores" #mayores="ngModel" [(ngModel)]="contacto.cantMayores" >
                 <option>1</option>
-                <option>2</option>
+                <option selected>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
@@ -43,7 +43,7 @@
             <select name="menores" id="menores" #menores="ngModel" [(ngModel)]="contacto.cantMenores">
                 <option>0</option>
                 <option>1</option>
-                <option>2</option>
+                <option selected>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
@@ -58,6 +58,6 @@
             <textarea name="detalles" id="detalles" placeholder="Escribe mas detalles." #detalles="ngModel" [(ngModel)]="contacto.detalles"></textarea>
         </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" class="btn-light" value="Enviar">
     </form>
 </section>

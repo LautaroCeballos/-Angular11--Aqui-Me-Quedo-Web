@@ -1,0 +1,93 @@
+.background-blur {
+	background-color: rgba(0, 0, 0, .8);
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opiniones-content {
+	width: 350px;
+	background-color: var(--main-color-text);
+    color: var(--light-degraded);
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.header-op-form{
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: var(--light-degraded);
+    color: var(--main-color-text);
+    padding-bottom: 5px;
+    box-shadow: 0px 1px 4px #000;
+}
+
+.header-op-form fa-icon{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.header-op-form h2{
+    margin: 0;
+}
+
+.opiniones-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 10px 30px 30px;
+}
+
+.form-group{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-group > *{
+    width: 100%;
+    display: block;
+}
+
+.form-group label {
+	margin-bottom: 3px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+	border: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+    resize: none;
+    font-family: "Leelawadee";
+    font-size: 14px;
+}
+
+form input[type="submit"]{
+    background-color: var(--light-degraded);
+    color: var(--main-color-text);
+	padding: 5px 20px;
+	border: 0;
+	font-family: "Courgette-Regular";
+	font-size: 1em;
+	border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+form input[type="submit"]:hover{
+    opacity: .9;
+}
+
+form input[type="submit"]:focus{
+    transform: scale(.9);
+}

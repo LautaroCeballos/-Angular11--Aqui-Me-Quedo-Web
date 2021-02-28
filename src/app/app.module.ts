@@ -26,6 +26,7 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RefGeoComponent } from './components/ref-geo/ref-geo.component';
+import { OpinionesFormComponent } from './components/opiniones-form/opiniones-form.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RefGeoComponent } from './components/ref-geo/ref-geo.component';
     ContactoComponent,
     ErrorComponent,
     RefGeoComponent,
+    OpinionesFormComponent,
   ],
   imports: [
     BrowserModule,
