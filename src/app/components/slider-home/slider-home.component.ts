@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { trigger, transition, useAnimation } from "@angular/animations";
 import { fadeIn, fadeOut } from "../../animations/animations";
+
+import { Imagen } from "../../models/imagen";
+import { ImagenService } from "../../services/imagen.service";
 
 @Component({
   selector: 'app-slider-home',
   templateUrl: './slider-home.component.html',
   styleUrls: ['./slider-home.component.css'],
+  providers: [ImagenService],
   animations: [
     trigger('carouselAnimation', [
       transition('void => *', [useAnimation(fadeIn, { params: { time: '1300ms' } })]),
@@ -18,26 +22,37 @@ import { fadeIn, fadeOut } from "../../animations/animations";
 
 export class SliderHomeComponent implements OnInit {
 
+  @Input() isModal: boolean;
+  @Input() selectedImgModal: Imagen;
+  @Input() indexModal: number;
+
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight;
 
-  public slides = [
-    { src: "../../../assets/images/slider-home/img1.jpg", alt: "", id: 0 },
-    { src: "../../../assets/images/slider-home/img2.jpg", alt: "", id: 1 },
-    { src: "../../../assets/images/slider-home/img3.jpg", alt: "", id: 2 },
-    { src: "../../../assets/images/slider-home/img4.jpg", alt: "", id: 3 },
-    { src: "../../../assets/images/slider-home/img5.jpg", alt: "", id: 4 }
-  ];
-
-  public slidesThumbs = this.slides.slice();
+  public slides: Array<Imagen>;
+  public slidesThumbs: Array<Imagen>;
 
   currentSlide = 0;
 
-  constructor() { }
+  constructor(
+    private _imagenService: ImagenService
+  ) {
+        
+   }
 
   ngOnInit(): void {
+    if(this.isModal){
+      this.slides = this._imagenService.getImagesExt();
+    }else{
+      this.slides = this._imagenService.getImagesHome();
+    }
+
+    this.slidesThumbs = this.slides.slice();
+
     this.preloadImages();
     this.updateSlideThumb("default");
+
+    if(this.isModal) this.slideTo(this.selectedImgModal.id, this.indexModal - 1);
   }
 
   preloadImages() {

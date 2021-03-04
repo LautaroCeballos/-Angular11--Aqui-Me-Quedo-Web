@@ -3,8 +3,7 @@ import { Testimonio } from '../models/testimonio';
 
 @Injectable()
 export class TestimonioService{
-    public testimonios: Testimonio[];
-    public shortTestimonios: Testimonio[];
+    private testimonios: Testimonio[];
 
     constructor(){
         this.testimonios = [ //Tolera hasta 5 comentarios
