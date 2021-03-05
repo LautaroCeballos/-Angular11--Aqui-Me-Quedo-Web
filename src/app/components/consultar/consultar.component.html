@@ -52,5 +52,5 @@
         </div>
         <button type="submit" [disabled]="consultaForm.invalid">Consultar Ahora</button>
     </form>
-    <small class="input-error" *ngIf="mensajeError !== ''">{{mensajeError}}</small>
+    <small class="input-error" *ngIf="mensajeError !== ''" @errorAnimation>{{mensajeError}}</small>
 </section>

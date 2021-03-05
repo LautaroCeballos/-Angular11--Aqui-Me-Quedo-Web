@@ -13,8 +13,8 @@ import { ImagenService } from "../../services/imagen.service";
   providers: [ImagenService],
   animations: [
     trigger('carouselAnimation', [
-      transition('void => *', [useAnimation(fadeIn, { params: { time: '1300ms' } })]),
-      transition('* => void', [useAnimation(fadeOut, { params: { time: '1300ms' } })])
+      transition('void => *', [useAnimation(fadeIn, { params: { time: '600ms' } })]),
+      transition('* => void', [useAnimation(fadeOut, { params: { time: '600ms' } })])
     ])
   ]
 })

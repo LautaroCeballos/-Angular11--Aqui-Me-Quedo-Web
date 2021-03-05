@@ -3,11 +3,20 @@ import { Imagen } from '../../models/imagen';
 import { ImagenService } from '../../services/imagen.service';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import { trigger, transition, useAnimation } from "@angular/animations";
+import { fadeIn, fadeOut } from "../../animations/animations";
+
 @Component({
   selector: 'app-galeria-parque',
   templateUrl: './galeria-parque.component.html',
   styleUrls: ['./galeria-parque.component.css'],
-  providers: [ImagenService]
+  providers: [ImagenService],
+  animations: [
+    trigger('modalAnimation', [
+      transition('void => *', [useAnimation(fadeIn, { params: { time: '200ms' } })]),
+      transition('* => void', [useAnimation(fadeOut, { params: { time: '200ms' } })])
+    ])
+  ]
 })
 export class GaleriaParqueComponent implements OnInit {
   faTimes = faTimes;

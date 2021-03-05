@@ -58,6 +58,7 @@
 
             <ng-container *ngIf="viewFormModal">
                 <app-opiniones-form 
+                    @modalAnimation
                     [experiencia]="expValue"
                     (cerrarModal)="cerrarModal()"            
                 ></app-opiniones-form>

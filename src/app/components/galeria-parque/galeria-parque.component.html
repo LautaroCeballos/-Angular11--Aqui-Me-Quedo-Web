@@ -18,7 +18,7 @@
     </div>
 
     <ng-container *ngIf="viewSliderModal">
-        <div class="background-blur">
+        <div class="background-blur" @modalAnimation>
             <fa-icon [icon]="faTimes" class="control exit" (click)="closeSliderModal()"></fa-icon>
             <app-slider-home
                 class="app-slider-home"

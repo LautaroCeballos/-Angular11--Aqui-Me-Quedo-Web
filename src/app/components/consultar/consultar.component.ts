@@ -5,11 +5,20 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import { Consulta } from '../../models/consulta';
 import { ConsultaService } from '../../services/consulta.service';
 
+import { trigger, transition, useAnimation } from "@angular/animations";
+import { fadeIn, fadeOut } from "../../animations/animations";
+
 @Component({
   selector: 'app-consultar',
   templateUrl: './consultar.component.html',
   styleUrls: ['./consultar.component.css'],
-  providers: [ConsultaService]
+  providers: [ConsultaService],
+  animations: [
+    trigger('errorAnimation', [
+      transition('void => *', [useAnimation(fadeIn, { params: { time: '200ms' } })]),
+      transition('* => void', [useAnimation(fadeOut, { params: { time: '200ms' } })])
+    ])
+  ]
 })
 export class ConsultarComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;

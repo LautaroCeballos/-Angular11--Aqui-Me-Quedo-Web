@@ -5,11 +5,20 @@ import { faStar as fasStar, faAngry, faFrown, faMehBlank, faSmileBeam, faGrinHea
 import { Testimonio } from '../../models/testimonio';
 import { TestimonioService } from '../../services/testimonio.service';
 
+import { trigger, transition, useAnimation } from "@angular/animations";
+import { fadeIn, fadeOut } from "../../animations/animations";
+
 @Component({
   selector: 'app-opiniones',
   templateUrl: './opiniones.component.html',
   styleUrls: ['./opiniones.component.css'],
-  providers: [TestimonioService]
+  providers: [TestimonioService],
+  animations: [
+    trigger('modalAnimation', [
+      transition('void => *', [useAnimation(fadeIn, { params: { time: '200ms' } })]),
+      transition('* => void', [useAnimation(fadeOut, { params: { time: '200ms' } })])
+    ])
+  ]
 })
 export class OpinionesComponent implements OnInit {
   farStar = farStar;
