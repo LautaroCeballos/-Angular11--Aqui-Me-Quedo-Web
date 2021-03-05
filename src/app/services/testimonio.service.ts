@@ -18,4 +18,8 @@ export class TestimonioService{
     getAllTestimonios(){
         return this.testimonios;
     }
+
+    sendTestimonio(testimonio: Testimonio){
+        console.log(testimonio);
+    }
 }

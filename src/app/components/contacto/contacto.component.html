@@ -6,28 +6,27 @@
     <form method="POST" #contactoForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group group-name">
             <label for="nombre">Nombre y Apellido: *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre"/>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" minlength="4" maxlength="32" required pattern="([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$"/>
+            <small class="input-error" *ngIf="!nombre.valid && nombre.touched && !nombre.focus">Su nombre debe empezar con mayusculas!</small>
         </div>
         <div class="form-group group-tel">
             <label for="telefono">Telefono: *</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu telefono" #telefono="ngModel" [(ngModel)]="contacto.telefono"/>
+            <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu telefono" #telefono="ngModel" [(ngModel)]="contacto.telefono" required pattern="(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$"/>
+            <small class="input-error" *ngIf="!telefono.valid && telefono.touched && !telefono.focus">Ingrese un telefono valido!</small>
         </div>
         <div class="form-group group-dsd">
             <label for="desde">Desde: *</label>
-            <input type="date" id="desde" name="desde" #desde="ngModel" [(ngModel)]="contacto.desde"/>
-            <!-- Hay que establecerle fecha minima y un value en la fecha actual -->
+            <input type="date" id="desde" name="desde" #desde="ngModel" min="{{today | date: 'yyyy-MM-dd'}}" [ngModel]="contacto.desde | date: 'yyyy-MM-dd'" (ngModelChange)="contacto.desde = $event"/>
         </div>
         <div class="form-group group-hst">
             <label for="hasta">Hasta: *</label>
-            <input type="date" id="hasta" name="hasta" #hasta="ngModel" [(ngModel)]="contacto.hasta"/>
-            <!-- Hay que establecerle fecha minima y un value en la fecha actual -->
+            <input type="date" id="hasta" name="hasta" #hasta="ngModel" min="{{today | date: 'yyyy-MM-dd'}}" [ngModel]="contacto.hasta | date: 'yyyy-MM-dd'" (ngModelChange)="contacto.hasta = $event"/>
         </div>
         <div class="form-group group-may">
             <label for="mayores">Mayores: *</label>
-            <!-- <input type="number" id="mayores" placeholder="¿Cuantos mayores son?"/> -->
             <select name="mayores" id="mayores" #mayores="ngModel" [(ngModel)]="contacto.cantMayores" >
                 <option>1</option>
-                <option selected>2</option>
+                <option>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
@@ -39,11 +38,10 @@
         </div>
         <div class="form-group group-men">
             <label for="menores">Menores: *</label>
-            <!-- <input type="number" id="menores" placeholder="¿Cuantos menores son?"required/> -->
             <select name="menores" id="menores" #menores="ngModel" [(ngModel)]="contacto.cantMenores">
                 <option>0</option>
                 <option>1</option>
-                <option selected>2</option>
+                <option>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
@@ -55,9 +53,10 @@
         </div>
         <div class="form-group group-dtlls">
             <label for="detalles">Detalles: </label>
-            <textarea name="detalles" id="detalles" placeholder="Escribe mas detalles." #detalles="ngModel" [(ngModel)]="contacto.detalles"></textarea>
+            <textarea name="detalles" id="detalles" placeholder="Escribe mas detalles." #detalles="ngModel" [(ngModel)]="contacto.detalles" minlength="4" maxlength="450" pattern="[a-zA-ZÀ-ÿ\u00f1\u00d10-9,\¿\?\¡\!\.\:\s]+$"></textarea>
+            <small class="input-error" *ngIf="!detalles.valid && detalles.touched && !detalles.focus">Ingrese una descripcion de su consulta</small>
         </div>
 
-        <input type="submit" class="btn-light" value="Enviar">
+        <input type="submit" class="btn-light" [disabled]="contactoForm.invalid" value="Enviar">
     </form>
 </section>

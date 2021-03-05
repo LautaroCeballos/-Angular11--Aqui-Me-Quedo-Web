@@ -61,6 +61,12 @@
 	margin-bottom: 3px;
 }
 
+.input-error{
+	color: #b51212;;
+	font-family: "Leelawadee";
+	position: relative;
+}
+
 .form-group input,
 .form-group textarea,
 .form-group select {

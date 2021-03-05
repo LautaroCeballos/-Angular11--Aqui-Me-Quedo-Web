@@ -36,22 +36,21 @@
             <div class="form-group">
                 <label for="llegada">
                     <span *ngIf="!consulta.llegada">Llegada</span>
-                    {{consulta.llegada | date}}
+                    {{consulta.llegada | date: 'dd-MM-yyyy'}}
                     <fa-icon [icon]="faCalendarAlt"></fa-icon>
                 </label>
-                <input type="date" id="llegada" name="llegada" #llegada="ngModel" [(ngModel)]="consulta.llegada">
+                <input type="date" id="llegada" min="{{today | date: 'yyyy-MM-dd'}}" name="llegada" #llegada="ngModel" [(ngModel)]="consulta.llegada" required>
             </div>
             <div class="form-group">
                 <label for="salida">
                     <span *ngIf="!consulta.salida">Salida</span>
-                    {{consulta.salida | date}}
+                    {{consulta.salida | date: 'dd-MM-yyyy'}}
                     <fa-icon [icon]="faCalendarAlt"></fa-icon>
                 </label>
-                <input type="date" name="salida" #salida="ngModel" [(ngModel)]="consulta.salida" id="salida">
+                <input type="date" id="salida" min="{{today | date: 'yyyy-MM-dd'}}" name="salida" #salida="ngModel" [(ngModel)]="consulta.salida" required> 
             </div>
         </div>
-
-        <button type="submit">Consultar Ahora</button>
+        <button type="submit" [disabled]="consultaForm.invalid">Consultar Ahora</button>
     </form>
-
+    <small class="input-error" *ngIf="mensajeError !== ''">{{mensajeError}}</small>
 </section>

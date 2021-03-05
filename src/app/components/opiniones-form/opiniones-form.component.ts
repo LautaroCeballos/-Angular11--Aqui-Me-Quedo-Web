@@ -3,7 +3,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Testimonio } from '../../models/testimonio';
 import { TestimonioService } from '../../services/testimonio.service';
 
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-opiniones-form',
@@ -14,29 +13,29 @@ import { DatePipe } from '@angular/common';
 export class OpinionesFormComponent implements OnInit {
   faTimes = faTimes;
 
-  public testimonio: Testimonio; 
+  public testimonio: Testimonio;
+  public today: Date;
+
   @Input() experiencia: Number;
   @Output() cerrarModal = new EventEmitter;
 
-  // public today = new Date();
-  public testimonioFecha: any;
 
-
-  constructor() {
-   }
+  constructor(
+    private _testimonioService: TestimonioService
+  ) {
+    this.testimonio = new Testimonio('', new Date(), this.experiencia, '');
+    this.today = new Date();
+  }
 
   ngOnInit(): void {
-
-    this.testimonio = new Testimonio('', new Date(), this.experiencia, '');
   }
 
-  onSubmit(){
+  onSubmit() {
     alert("Formulario Enviado");
-    this.testimonio.fecha = this.testimonioFecha;
-    // console.log(this.testimonio);
+    this._testimonioService.sendTestimonio(this.testimonio);
   }
 
-  closeOpForm(){
+  closeOpForm() {
     this.cerrarModal.emit();
   }
 

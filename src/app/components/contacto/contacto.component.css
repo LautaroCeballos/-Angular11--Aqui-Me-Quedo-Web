@@ -23,9 +23,11 @@
     background-color: #fdc889;
     border-style: none;
     width: 100%;
-    padding: 10px 5px;
+    padding: 10px 15px;
     border-radius: 3px;
     margin: 5px 0 10px;
+    font-family: "Leelawadee";
+    font-size: 14px;
 }
 
 .contact-form textarea{
@@ -36,11 +38,29 @@
 
 .contact-form input[type=submit]{
     grid-column: 4 / 5;
+    font-family: "Courgette-Regular";
+	font-size: 1em;
+    transition: all 300ms ease-in-out;
+}
+
+.contact-form input[type="submit"]:hover{
+    opacity: .9;
+}
+
+.contact-form input[type="submit"]:focus{
+    transform: scale(.9);
 }
 
 .group-name{grid-column: 1 / 3;}
 .group-tel{grid-column: 3 / 5;}
 .group-dtlls{grid-column: 1 / 5;}
+
+.input-error{
+	color: #f78282;
+	font-family: "Leelawadee";
+	position: relative;
+	top: -10px;
+}
 
 
 @media(max-width: 700px){

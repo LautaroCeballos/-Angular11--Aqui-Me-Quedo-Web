@@ -8,7 +8,8 @@
         <form class="opiniones-form" #modalForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="name-op-form">¿Cual es tu nombre?</label>
-                <input type="text" id="name-op-form" name="name-op-form" #nombre="ngModel" [(ngModel)]="testimonio.nombre" focus/>
+                <input type="text" id="name-op-form" name="name-op-form" #nombre="ngModel" [(ngModel)]="testimonio.nombre" minlength="4" maxlength="32" required pattern="([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$"/>
+                <small class="input-error" *ngIf="!nombre.valid && nombre.touched && !nombre.focus">Tu nombre debe comenzar con mayusculas</small>
             </div>
             <div class="form-group">
                 <label for="reco-op-form">¿Como fue tu experiencia?</label>
@@ -22,13 +23,14 @@
             </div>
             <div class="form-group">
                 <label for="fecha-op-form">¿Cuando nos visitaste?</label>
-                <input type="date" id="fecha-op-form" name="fecha-op-form" #fecha="ngModel" [ngModel]="testimonio.fecha | date: 'yyyy-MM-dd'" (ngModelChange)="testimonio.fecha = $event"/>
+                <input type="date" id="fecha-op-form" name="fecha-op-form" #fecha="ngModel" max="{{today | date: 'yyyy-MM-dd'}}" [ngModel]="testimonio.fecha | date: 'yyyy-MM-dd'" (ngModelChange)="testimonio.fecha = $event"/>
             </div>
             <div class="form-group">
                 <label for="detalle-op-form">¿Como fue tu estadia con nosotros?</label>
-                <textarea name="detalle-op-form" id="detalle-op-form" #detalle="ngModel" [(ngModel)]="testimonio.detalle"></textarea>
+                <textarea name="detalle-op-form" id="detalle-op-form" #detalle="ngModel" [(ngModel)]="testimonio.detalle" minlength="4" maxlength="80" required pattern="[a-zA-ZÀ-ÿ\u00f1\u00d10-9,\¿\?\¡\!\.\s]+$"></textarea>
+                <small class="input-error" *ngIf="!detalle.valid && detalle.touched && !detalle.focus">No podemos trabajar con algunos simbolos</small>
             </div>
-            <input type="submit" value="Enviar">
+            <input type="submit" [disabled]="modalForm.invalid" value="Enviar">
         </form>
     </div>
 </div>
