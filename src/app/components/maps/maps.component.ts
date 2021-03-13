@@ -1,19 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { Informacion } from '../../models/informacion';
+import { InformacionService } from '../../services/informacion.service';
 
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
-  styleUrls: ['./maps.component.css']
+  styleUrls: ['./maps.component.css'],
+  providers: [InformacionService]
 })
 export class MapsComponent implements OnInit {
 
-  lat= -31.722255506436593; 
-  lng= -65.008289713163;
-  zoom = 15;
+  private info: Informacion;
+  public lat: number;
+  public lgn: number;
+  public zoom: number;
 
-  constructor() { }
+  constructor(
+    private _informacionService: InformacionService
+  ) { 
+    this.info = this._informacionService.getInfo();
+  }
 
   ngOnInit(): void {
+    const { lat, lgn, zoom } = this.info.ubicacion;
+
+    this.lat = lat;
+    this.lgn = lgn;
+    this.zoom = zoom;
+
   }
 
 }

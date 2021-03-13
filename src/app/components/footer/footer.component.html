@@ -3,13 +3,13 @@
         <div class="footer-container">
             <div class="footer-redes-logo">
                 <div class="footer-redes">
-                    <a href="https://www.instagram.com/aquimequedominaclavero/" target="_blank">
+                    <a href="{{redes.urlInstagram}}" target="_blank">
                         <fa-icon [icon]="faInstagram"></fa-icon>
                     </a>
-                    <a href="https://www.facebook.com/complejoaquimequedo/" target="_blank">
+                    <a href="{{redes.urlFacebook}}" target="_blank">
                         <fa-icon [icon]="faFacebookSquare"></fa-icon>
                     </a>
-                    <a href="https://wa.me/5493544565770" target="_blank">
+                    <a href="{{'https://wa.me/' + contacto.telefono}}" target="_blank">
                         <fa-icon [icon]="faWhatsapp"></fa-icon>
                     </a>
                 </div>
@@ -20,15 +20,15 @@
 
             <div class="footer-contacto">
                 <div class="foot-contact-group">
-                    <span>+54 9 3544 565770 <br> +54 9 3544 470955</span>
+                    <span>{{ contacto.telefono | formatPhone }}</span>
                     <fa-icon [icon]="faPhoneAlt"></fa-icon>
                 </div>
                 <div class="foot-contact-group">
-                    <span>La Piedad y Uspallata <br> Mina Clavero - Cordoba</span>
+                    <span> {{ direccion.numero + ' ' + direccion.calle}} <br> {{ direccion.localidad + ' - ' + direccion.ciudad}}</span>
                     <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
                 </div>
                 <div class="foot-contact-group">
-                    <span>cabaquimequedo@live.com</span>
+                    <span>{{ contacto.email }}</span>
                     <fa-icon [icon]="faEnvelope"></fa-icon>
                 </div>
             </div>

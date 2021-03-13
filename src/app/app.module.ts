@@ -4,6 +4,7 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from '@angular/forms';
+import { FormatPhone } from './pipes/formatPhone.pipe';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -50,6 +51,7 @@ import { OpinionesFormComponent } from './components/opiniones-form/opiniones-fo
     ErrorComponent,
     RefGeoComponent,
     OpinionesFormComponent,
+    FormatPhone
   ],
   imports: [
     BrowserModule,
