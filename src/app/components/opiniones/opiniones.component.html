@@ -23,7 +23,7 @@
                                             <fa-icon *ngIf="i >= testimonio.clasificacion" [icon]="farStar"></fa-icon>
                                         </ng-container>
                                     </span>
-                                    <span class="op-fecha">{{testimonio.fecha | date}}</span>
+                                    <span class="op-fecha">{{testimonio.fecha | date: 'dd-MM-yy'}}</span>
                                 </div>
                                 <div class="op-testimonio">
                                     {{testimonio.detalle}}

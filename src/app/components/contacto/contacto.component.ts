@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contacto } from '../../models/contacto';
 import { ContactoService } from '../../services/contacto.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-contacto',
@@ -32,8 +33,27 @@ export class ContactoComponent implements OnInit {
     ){
       this.errorInput = true;
     }else{
+      swal({
+        title: "Se enviara via WhatsApp",
+        text: "¿Desea continuar?",
+        icon: "warning",
+        buttons: ['Cancelar', 'Continuar'],
+        dangerMode: false,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal({
+            text: "Sera redireccionado a WhatsApp",
+            icon: "success",
+          });
+          this._contactoService.enviarContacto(this.contacto);
+        } else {
+          swal({
+            text: "Ha cancelado el envio exitosamente"
+          });
+        }
+      });
       this.errorInput = false;
-      this._contactoService.enviarContacto(this.contacto);
     }
 
     

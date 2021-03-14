@@ -16,7 +16,7 @@ export class ConsultaService{
                 nombre: 'Bibiana',
                 apellido: 'Dalfeo' 
             },{
-                telefono: 5493544565770,
+                telefono: 5493513451890,
                 email: 'cabaquimequedo@live.com'
             },{
                 numero: '', 
@@ -31,8 +31,8 @@ export class ConsultaService{
                 lgn: -65.008289713163,
                 zoom: 15
             }
-        )
-    }
+        );
+    };
 
     private writeMensaje(consulta){
         let mensaje: string;
@@ -42,12 +42,12 @@ export class ConsultaService{
         
         mensaje = "Hola Aqui Me Quedo. Estoy consultando disponibilidad desde el dia *" + desde + "* hasta el *" + hasta + "* para *" + consulta.cantAdultos + "* adultos";
         if(consulta.cantNinos > 0){
-            mensaje += " y *" + consulta.cantNinos + "* niños"
+            mensaje += " y *" + consulta.cantNinos + "* niños";
         }else{
-            mensaje += " sin niños."
+            mensaje += " sin niños.";
         }
 
-        mensaje += ". Muchas gracias y Esperamos su respuesta."
+        mensaje += ". Muchas gracias y Esperamos su respuesta.";
 
         return mensaje;
     }
@@ -55,7 +55,6 @@ export class ConsultaService{
     enviarConsulta(consulta: Consulta){
         this.mensaje = this.writeMensaje(consulta);
 
-        window.location.href = 'https://wa.me/' + this.info.contacto.telefono + '?text=' + this.mensaje;
-        console.log(this.mensaje);
+        window.open('https://wa.me/' + this.info.contacto.telefono + '?text=' + this.mensaje, '_blank');
     }
 }

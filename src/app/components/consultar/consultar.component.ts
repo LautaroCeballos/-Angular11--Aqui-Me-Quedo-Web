@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import swal from 'sweetalert';
 
 import { Consulta } from '../../models/consulta';
 import { ConsultaService } from '../../services/consulta.service';
@@ -46,7 +47,26 @@ export class ConsultarComponent implements OnInit {
     } else if(this.consulta.cantNinos === ''){
       this.mensajeError = "¿Cuantos niños viajan?";
     } else {
-      this._consultaService.enviarConsulta(this.consulta);
+      swal({
+        title: "Se enviara via WhatsApp",
+        text: "¿Desea continuar?",
+        icon: "warning",
+        buttons: ['Cancelar', 'Continuar'],
+        dangerMode: false,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal({
+            text: "Sera redireccionado a WhatsApp",
+            icon: "success",
+          });
+          this._consultaService.enviarConsulta(this.consulta);
+        } else {
+          swal({
+            text: "Ha cancelado el envio exitosamente"
+          });
+        }
+      });
       this.mensajeError = "";
     }  
     

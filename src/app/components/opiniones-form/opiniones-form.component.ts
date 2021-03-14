@@ -2,6 +2,7 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Testimonio } from '../../models/testimonio';
 import { TestimonioService } from '../../services/testimonio.service';
+import swal from 'sweetalert';
 
 
 @Component({
@@ -23,16 +24,34 @@ export class OpinionesFormComponent implements OnInit {
   constructor(
     private _testimonioService: TestimonioService
   ) {
-    this.testimonio = new Testimonio('', new Date(), this.experiencia, '');
     this.today = new Date();
   }
 
   ngOnInit(): void {
+    this.testimonio = new Testimonio('', new Date(), this.experiencia, '');
   }
 
   onSubmit() {
-    alert("Formulario Enviado");
-    this._testimonioService.sendTestimonio(this.testimonio);
+    swal({
+      title: "Se enviara via WhatsApp",
+      text: "¿Desea continuar?",
+      icon: "warning",
+      buttons: ['Cancelar', 'Continuar'],
+      dangerMode: false,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal({
+          text: "Sera redireccionado a WhatsApp",
+          icon: "success",
+        });
+        this._testimonioService.sendTestimonio(this.testimonio);
+      } else {
+        swal({
+          text: "Ha cancelado el envio exitosamente"
+        });
+      }
+    });
   }
 
   closeOpForm() {

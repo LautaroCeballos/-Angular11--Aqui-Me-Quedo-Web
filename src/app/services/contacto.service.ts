@@ -60,8 +60,6 @@ export class ContactoService{
     
     enviarContacto(contacto: Contacto){        
         this.mensaje = this.writeMensaje(contacto);
-
-        window.location.href = 'https://wa.me/' + this.info.contacto.telefono + '?text=' + this.mensaje;
-        console.log(this.mensaje);
+        window.open('https://wa.me/' + this.info.contacto.telefono + '?text=' + this.mensaje, '_blank')
     }
 }
