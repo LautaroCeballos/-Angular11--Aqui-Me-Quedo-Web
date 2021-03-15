@@ -16,10 +16,10 @@ export class ImagenService{
         ];
 
         this.imagesExterior = [
-            new Imagen("assets/images/slider-home/img1.jpg", "Fachada del Frente", 0),
-            new Imagen("assets/images/slider-home/img2.jpg", "Habitacion", 1),
-            new Imagen("assets/images/slider-home/img3.jpg", "Comedor", 2),
-            new Imagen("assets/images/slider-home/img4.jpg", "Comedor", 3)
+            new Imagen("assets/images/slider-parque/1.jpg", "Asador", 0),
+            new Imagen("assets/images/slider-parque/2.jpg", "Parque", 1),
+            new Imagen("assets/images/slider-parque/3.jpg", "Pileta", 2),
+            new Imagen("assets/images/slider-parque/4.jpg", "Patio", 3)
         ];
     }
 

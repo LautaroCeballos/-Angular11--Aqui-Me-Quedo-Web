@@ -16,7 +16,7 @@ export class ConsultaService{
                 nombre: 'Bibiana',
                 apellido: 'Dalfeo' 
             },{
-                telefono: 5493513451890,
+                telefono: 5493544565770,
                 email: 'cabaquimequedo@live.com'
             },{
                 numero: '', 

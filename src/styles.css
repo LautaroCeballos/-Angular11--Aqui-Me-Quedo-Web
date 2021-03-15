@@ -31,6 +31,8 @@
     --width-container-center: 762px;
 }
 
+
+
 @font-face{
     font-family: "Courgette-Regular";
     src: url(./assets/fonts/Courgette-Regular.ttf);
@@ -200,6 +202,10 @@ section{
     .normalize-text{
         font-size: .9em;
     }
+
+    :root{
+        --margin-top-components: 40px;
+    }
 }
 
 @media(max-width: 550px){
@@ -243,5 +249,9 @@ section{
 @media(max-width: 450px){
     .subtitle{
         font-size: 18px;
+    }
+
+    :root{
+        --margin-top-components: 40px;
     }
 }

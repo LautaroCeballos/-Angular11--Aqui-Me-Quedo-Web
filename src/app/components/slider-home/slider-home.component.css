@@ -139,5 +139,12 @@
     .nav-slide-mobile{
       display: block;
     }
+
+    .control.next {
+      right: -30px;
+    }
+    .control.prev {
+      left: -30px;
+    }
 }
 

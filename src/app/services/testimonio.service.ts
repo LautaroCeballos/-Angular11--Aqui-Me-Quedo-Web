@@ -15,7 +15,7 @@ export class TestimonioService{
         this.testimonios = [ //Tolera hasta 5 comentarios
             new Testimonio('Cristian Cardozo', new Date(2021, 3, 9), 5, "Muy lindo lugar, re serca de todo, muy buena atención de su dueña. La verdad voy a volver el año q viene"),
             new Testimonio('Mariela Valencia', new Date(2021, 3, 8), 5, "Excelente!! Comodidad y comfort. La atención es muy buena. Estás cerca de todo!! Estamos muy felices!!"),
-            new Testimonio('Alfredo Cuello', new Date(2021, 3, 2), 5, "Usamos 2 de las 3 cabañas disponibles...excelente ubicacion muy buena pileta y hermosa atencion de bibiana su propietaria...nos hizo sentir como en casa....extrañamos a negrita la mascota del lugar....jajaja sin duda volveremos!!!!!!!😎"),
+            new Testimonio('Alfredo Cuello', new Date(2021, 3, 2), 5, "Excelente ubicacion muy buena pileta y hermosa atencion...nos hizo sentir como en casa.. sin duda volveremos!!!!!!!😎"),
             new Testimonio('Demian Pianta', new Date(2021, 2, 12), 5, "Exelente lugar! Muy tranquilo. Ubicación espectacular. Muy buena onda y atención de Bibiana! Para volver una y otra vez!"),
             new Testimonio('Alan Olivastri', new Date(2020, 1, 15), 5, "Descanso asegurado calidez de su anfitriona y ubicación inmejorable")
         ];
