@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Contacto } from '../../models/contacto';
 import { ContactoService } from '../../services/contacto.service';
-import swal from 'sweetalert';
+import _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core'
 
 @Component({
   selector: 'app-contacto',
@@ -26,6 +27,8 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {}  
 
   onSubmit(){
+    const swal: SweetAlert = _swal as any;
+
     if(
       this.contacto.nombre === '' ||
       this.contacto.telefono === '' ||

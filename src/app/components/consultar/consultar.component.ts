@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
 
 import { Consulta } from '../../models/consulta';
 import { ConsultaService } from '../../services/consulta.service';
@@ -27,8 +29,7 @@ export class ConsultarComponent implements OnInit {
 
   public consulta: Consulta;
   public today: Date;
-
-  public mensajeError;
+  public mensajeError: string;
 
   constructor(
     private _consultaService: ConsultaService
@@ -42,6 +43,9 @@ export class ConsultarComponent implements OnInit {
   }
 
   onSubmit(){
+    
+    const swal: SweetAlert = _swal as any;
+
     if(this.consulta.cantAdultos === ''){
       this.mensajeError = "¿Cuantos adultos viajan?";
     } else if(this.consulta.cantNinos === ''){

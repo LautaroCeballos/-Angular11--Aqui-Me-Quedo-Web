@@ -2,7 +2,8 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Testimonio } from '../../models/testimonio';
 import { TestimonioService } from '../../services/testimonio.service';
-import swal from 'sweetalert';
+import _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core'
 
 
 @Component({
@@ -32,6 +33,8 @@ export class OpinionesFormComponent implements OnInit {
   }
 
   onSubmit() {
+    const swal: SweetAlert = _swal as any;
+    
     swal({
       title: "Se enviara via WhatsApp",
       text: "¿Desea continuar?",
